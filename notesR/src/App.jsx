@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './App.css';
 import {
   Routes,
@@ -10,9 +11,9 @@ import notes from './components/notes';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<login />} exact />
-      <Route path="/signup" element={<signup />} exact />
-      <Route path="/notes" element={<notes />} exact />
+      <Route path="/" element={login} />
+      <Route path="/signup" element={signup} />
+      <Route path="/notes" element={notes} />
     </Routes>
   );
 }
