@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginGoogle } from '../firebase/Auth';
@@ -27,7 +28,7 @@ function Login() {
           We hope to offer you more options in the future.
         </h3>
         <button type="button" id="loginGoogleBtn" onClick={googleSignIn}>Sign in with Google</button>
-        <h4>I dont have a Google account</h4>
+        <a id="googleLink" href="https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%26ogbl%2F&ltmpl=default&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp" target="_blank" rel="noreferrer">I dont have a Google account</a>
       </section>
     </>
   );
