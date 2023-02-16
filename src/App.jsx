@@ -1,20 +1,23 @@
-/* eslint-disable react/react-in-jsx-scope */
 import './App.css';
 import {
   Routes,
   Route,
 } from 'react-router-dom';
-import login from './components/login';
-import signup from './components/signup';
-import notes from './components/notes';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Notes from './components/Notes';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={login} />
-      <Route path="/signup" element={signup} />
-      <Route path="/notes" element={notes} />
-    </Routes>
+    <div className = "App">
+      <div>
+        <Routes>
+        <Route path="/" element={<Login/>} exact/>
+          <Route path="/signup" element={<Signup/>} exact/>
+          <Route path="/notes" element={<Notes/>} exact/>
+        </Routes>
+      </div>
+    </div>
   );
 }
 
