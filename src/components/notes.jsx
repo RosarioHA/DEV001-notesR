@@ -1,5 +1,6 @@
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import './Notes.css';
 
 function Notes() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Notes() {
   };
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
-    <button type="button" className="logoutBtn" onClick={logOut}>Cerrar Sesion</button>
+    <button type="button" id="logoutBtn" onClick={logOut}>Cerrar Sesion</button>
   );
 }
 
