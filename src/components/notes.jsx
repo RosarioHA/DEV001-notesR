@@ -1,20 +1,24 @@
-import { signOut } from 'firebase/auth';
+/* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from 'react-router-dom';
+import { logOut } from '../firebase/Auth';
 import './Notes.css';
 
 function Notes() {
   const navigate = useNavigate();
-  const logOut = () => {
-    // eslint-disable-next-line no-unused-vars
-    signOut().then((res) => {
-      navigate('/');
-    })
-      // eslint-disable-next-line no-console
-      .catch(console.error);
-  };
+  function signOut() {
+    logOut()
+      .then(() => {
+        navigate('/');
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-alert
+        alert(err);
+      });
+  }
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
-    <button type="button" id="logoutBtn" onClick={logOut}>Cerrar Sesion</button>
+    <div id="notesDiv">
+      <button id="logoutBtn" type="button" onClick={signOut}> Sign out </button>
+    </div>
   );
 }
 
