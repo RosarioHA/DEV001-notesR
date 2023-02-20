@@ -1,12 +1,15 @@
 #notesDiv{
-    border: 2px solid red;
     display: flex;
     justify-content: space-between;
+    background-color: #FEE4B7;
+    height: 812px;
+    padding: 2em;
 }
 #logoutBtn{
     background-color: #053752; 
     color:#FDF8DD;
     width: 150px;
+    height: 3em;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1em;
