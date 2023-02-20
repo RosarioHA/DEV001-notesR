@@ -37,7 +37,3 @@ export const loginGoogle = () => {
 export function logOut() {
   return signOut(auth);
 }
-
-// export const logOut = signOut(auth).then(() => {
-//   // Sign-out successful.
-// }).catch(console.error);
