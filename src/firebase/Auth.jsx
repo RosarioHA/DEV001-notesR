@@ -1,11 +1,9 @@
-/* eslint-disable no-console */
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
 import { initializeApp } from 'firebase/app';
 import {
   getAuth, signInWithPopup, GoogleAuthProvider, signOut,
 } from 'firebase/auth';
 
+// Config
 const firebaseConfig = {
   apiKey: 'AIzaSyCqxe-CwVaxZpbtXrx5ZPnke-2Dv0luwUg',
   authDomain: 'notes-85bf0.firebaseapp.com',
@@ -17,21 +15,13 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 
 // Auth
-export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
-export const signInGoogle = () => signInWithPopup(auth, provider);
 
 export const loginGoogle = () => {
-  const auth = getAuth();
-  const user = auth.currentUser;
-  if (user !== null) {
-    const userName = user.displayName;
-    const userMail = user.email;
-    const userID = user.uid;
-  }
-  return signInGoogle();
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider);
 };
 
 export function logOut() {

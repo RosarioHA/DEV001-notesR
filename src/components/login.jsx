@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginGoogle } from '../firebase/Auth';
@@ -17,7 +16,6 @@ function Login() {
   };
 
   return (
-
     <div id="notes">
       <section id="intro">
         <img id="notesLogo" alt="notesLogo" src={notesLogo} />
@@ -32,7 +30,6 @@ function Login() {
         <a id="googleLink" href="https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%26ogbl%2F&ltmpl=default&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp" target="_blank" rel="noreferrer">I dont have a Google account</a>
       </section>
     </div>
-
   );
 }
 
