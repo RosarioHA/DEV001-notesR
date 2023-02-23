@@ -7,8 +7,7 @@ import './Login.css';
 function Login() {
   const navigate = useNavigate();
   const googleSignIn = () => {
-    // eslint-disable-next-line no-unused-vars
-    loginGoogle().then((res) => {
+    loginGoogle().then(() => {
       navigate('/notes');
     })
       // eslint-disable-next-line no-console
