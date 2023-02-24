@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginGoogle } from '../firebase/Auth';
+import { loginGoogle } from '../firebase/firebase-init';
 import notesLogo from '../assets/notesLogo.png';
 import './Login.css';
 
