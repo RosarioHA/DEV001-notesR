@@ -1,0 +1,36 @@
+#notesDiv{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FEE4B7;
+    height: 812px;
+    padding: 2em;
+}
+#logoutBtn{
+    background-color: #053752; 
+    color:#FDF8DD;
+    width: 150px;
+    height: 3em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.6em 1.2em;
+    border: 1px solid transparent;
+}
+#welcome{
+    color: #053752;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+/* TABLET STYLE */
+@media only screen and (min-width: 555px) {
+    #welcome{
+        font-size: 1.2em;   
+    }
+}

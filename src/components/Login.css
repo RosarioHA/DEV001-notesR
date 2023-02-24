@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap');
+
+body{
+    background-color: #B6D8EA;
+    width: 100%;
+    height: 100%;
+    margin: 0em; 
+    padding: 0em;
+}
+#notes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#intro{
+    background-color: #053752;
+    width: 100%;
+    height: 11em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    margin-top: 7em;
+}
+
+/* MOBILE STYLE */
+#notesLogo {
+    width: 100px;
+    margin-left: 1.5em;
+}
+#notesIntro{
+    width: 200px;
+    text-align: left;
+    margin-left: 1em;
+    color: #FDF8DD;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size:1.3em;
+    margin-right: 1em;
+}
+
+#loginSection{
+    background-color: #FEE4B7;
+    border-radius: 30px;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6em;
+    padding: 0.7em;
+    
+}
+#loginText{
+    color: #053752;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size:1.2em;
+    width: 12em;
+    margin-bottom: 1em;
+}
+#loginGoogleBtn{
+    background-color: #053752; 
+    color:#FDF8DD;
+    width: 250px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.6em 1.2em;
+    border: 1px solid transparent;
+}
+#googleLink{
+    color: #053752;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+/* TABLET STYLE */
+@media only screen and (min-width: 555px) {
+    #notesLogo {
+        width: 130px;
+        margin-left: 20px;
+    }
+    #notesIntro{
+        width: 400px;
+        margin-left: 40px;
+        margin-right: 2em;
+    }
+    #loginSection{
+        width: 25em;
+        margin-top: 8em;
+        padding-bottom: 15px;   
+    }
+    #loginText{
+     width: 15em;
+    }
+}
