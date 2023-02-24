@@ -8,6 +8,7 @@ import './Notes.css';
 function Notes() {
   const [name, setName] = useState('');
   const auth = getAuth();
+
   onAuthStateChanged(auth, (user) => {
     const { displayName } = user;
     if (displayName !== null) {
