@@ -7,7 +7,6 @@
 }
 
 #heatherSection{
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -38,21 +37,26 @@
 }
 
 #newNotesSctn{
-    border: 2px solid black;
     padding: 1em;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
+    align-items: center;
+    background-color:#B6D8EA;
+    border-radius: 20px;
+    max-width: 25em;
 }
 #titleInput{
     background-color: #fff7f7;
     border: none;
     width: 90%;
+    margin-bottom: 1em;
 }
 #noteInput{
     background-color: #fff7f7;
     border: none;
     width: 90%;
     height: 10em;
+    margin-bottom: 1em;
 }
 #saveBtn{
     background-color: #053752; 

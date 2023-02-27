@@ -3,9 +3,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Login from './components/Login';
+import Login from './components/login';
 // import Signup from './components/Signup';
-import Notes from './components/Notes';
+import Notes from './components/notes';
 
 function App() {
   return (

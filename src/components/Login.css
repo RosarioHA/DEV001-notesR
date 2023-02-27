@@ -88,29 +88,6 @@ body{
     #notesLogo {
         width: 130px;
         margin-left: 20px;
-        border: 2px solid red;
-    }
-    #notesIntro{
-        width: 400px;
-        margin-left: 40px;
-        margin-right: 2em;
-    }
-    #loginSection{
-        width: 25em;
-        margin-top: 8em;
-        padding-bottom: 15px;   
-    }
-    #loginText{
-     width: 15em;
-    }
-}
-
-
-@media only screen and (min-width: 700px) {
-    #notesLogo {
-        width: 130px;
-        margin-left: 20px;
-        border: 2px solid black;
     }
     #notesIntro{
         width: 400px;
