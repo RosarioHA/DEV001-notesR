@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, logOut } from '../firebase/firebase-init';
+import NotesForm from './form';
 import '../styles/Notes.css';
 
 function Notes() {
@@ -44,12 +45,8 @@ function Notes() {
         <button id="logoutBtn" type="button" onClick={signOut}> Sign out </button>
       </section>
 
-      <section id="newNotesSctn">
-        <form>
-          <input id="titleInput" name="title" placeholder="Give your note a title" />
-          <input id="noteInput" name="descr" placeholder="Write your note here" />
-          <button id="saveBtn" type="submit"> Save </button>
-        </form>
+      <section>
+        <NotesForm />
       </section>
       <section>
         <ul id="notesUL"> </ul>
