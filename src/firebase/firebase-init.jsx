@@ -18,13 +18,13 @@ import {
 
 // Config
 const firebaseConfig = {
-  apiKey: 'AIzaSyCqxe-CwVaxZpbtXrx5ZPnke-2Dv0luwUg',
-  authDomain: 'notes-85bf0.firebaseapp.com',
-  projectId: 'notes-85bf0',
-  storageBucket: 'notes-85bf0.appspot.com',
-  messagingSenderId: '426920595820',
-  appId: '1:426920595820:web:08af60fc091c907cba6349',
-  measurementId: 'G-TFHY3ZBDM8',
+  apiKey: 'AIzaSyAw9DfwnNTGMCa1_fYeQo9xdeRq9mnubsQ',
+  authDomain: 'notes-mp.firebaseapp.com',
+  projectId: 'notes-mp',
+  storageBucket: 'notes-mp.appspot.com',
+  messagingSenderId: '984188484451',
+  appId: '1:984188484451:web:5fafdccad1884dd33df156',
+
 };
 
 export const app = initializeApp(firebaseConfig);
