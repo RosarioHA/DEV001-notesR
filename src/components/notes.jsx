@@ -26,12 +26,6 @@ function Notes() {
     });
   };
 
-  // eslint-disable-next-line no-unused-vars
-  const initValue = {
-    title: '',
-    descr: '',
-  };
-
   return (
 
     <div id="notesDiv">

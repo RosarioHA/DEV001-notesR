@@ -4,16 +4,16 @@ import {
 } from 'firebase/auth';
 import {
   getFirestore,
-  collection,
-  addDoc,
-  doc,
-  getDocs,
-  query,
-  orderBy,
-  onSnapshot,
-  updateDoc,
-  getDoc,
-  deleteDoc,
+  // collection,
+  // addDoc,
+  // doc,
+  // getDocs,
+  // query,
+  // orderBy,
+  // onSnapshot,
+  // updateDoc,
+  // getDoc,
+  // deleteDoc,
 } from 'firebase/firestore';
 
 // Config
@@ -41,28 +41,28 @@ export function logOut() {
 // Firestore
 export const db = getFirestore(app);
 
-export const saveNote = (title, date, description, uid) => {
-  addDoc(collection(db, 'notesColection'), {
-    title, date, description, uid,
-  });
-};
+// export const saveNote = (title, date, description, uid) => {
+//   addDoc(collection(db, 'notesColection'), {
+//     title, date, description, uid,
+//   });
+// };
 
-// export async function getNotes() {
-//   const nColection = query(collection(db, 'notesColection'));
-//   return getDocs(nColection).then((QuerySnapshot) => QuerySnapshot.docs.map((doc) => ({
-//     data: doc.data(),
-//     id: doc.id,
-//   })));
-// }
-export const getNotes = () => getDocs(collection(db, 'notesColection'));
+// // export async function getNotes() {
+// //   const nColection = query(collection(db, 'notesColection'));
+// //   return getDocs(nColection).then((QuerySnapshot) => QuerySnapshot.docs.map((doc) => ({
+// //     data: doc.data(),
+// //     id: doc.id,
+// //   })));
+// // }
+// export const getNotes = () => getDocs(collection(db, 'notesColection'));
 
-export const onGetNotes = (querySnapshot) => {
-  const queryNote = query(collection(db, 'notesColection'), orderBy('date', 'desc'));
-  onSnapshot(queryNote, querySnapshot);
-};
+// export const onGetNotes = (querySnapshot) => {
+//   const queryNote = query(collection(db, 'notesColection'), orderBy('date', 'desc'));
+//   onSnapshot(queryNote, querySnapshot);
+// };
 
-export const deleteNote = (id) => deleteDoc(doc(db, 'notesColection', id));
+// export const deleteNote = (id) => deleteDoc(doc(db, 'notesColection', id));
 
-export const getNote = (id) => getDoc(doc(db, 'notesColection', id));
+// export const getNote = (id) => getDoc(doc(db, 'notesColection', id));
 
-export const updateNote = (id, newFields) => updateDoc(doc(db, 'notesColection', id), newFields);
+// export const updateNote = (id, newFields) => updateDoc(doc(db, 'notesColection', id), newFields);

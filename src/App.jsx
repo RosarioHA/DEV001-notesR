@@ -4,7 +4,6 @@ import {
   Route,
 } from 'react-router-dom';
 import Login from './components/login';
-// import Signup from './components/Signup';
 import Notes from './components/notes';
 
 function App() {
