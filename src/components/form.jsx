@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import React, { useState } from 'react';
-// import { collection, addDoc } from 'firebase/firestore';
-// import { db } from '../firebase/firebase-init';
+import React, { useEffect, useState } from 'react';
+import {
+  collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
+} from 'firebase/firestore';
+import { db } from '../firebase/firebase-init';
 import '../styles/Form.css';
 
 function NotesForm() {
@@ -10,8 +13,10 @@ function NotesForm() {
     descr: '',
   };
 
+  // state variables
   const [note, setNote] = useState(initValue);
 
+  // variables that catch the value of the inputs
   const catchInput = (e) => {
     const { name, value } = e.target;
     setNote({ ...note, [name]: value });
@@ -19,9 +24,32 @@ function NotesForm() {
 
   const saveNotes = async (e) => {
     e.preventDefault();
-    console.log(note);
+    try {
+      await addDoc(collection(db, 'nCollection'), {
+        ...note,
+      });
+    } catch (error) {
+      console.log(error);
+    }
     setNote({ ...initValue });
   };
+
+  //   // variables that render the notes list
+  //   useEffect(() => {
+  //     const getUL = async () => {
+  //       try {
+  //         const querySnapshot = await getDocs(collection(db, 'nCollection'));
+  //         const docs = [];
+  //         querySnapshot.forEach((docu) => {
+  //           docs.push({ ...doc.data(), id: docu.id });
+  //         });
+  //         setList(docs);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     };
+  //     getUL();
+  //   }, [list]);
 
   return (
     <form id="newNotesSctn" onSubmit={saveNotes}>
