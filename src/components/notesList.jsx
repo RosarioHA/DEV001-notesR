@@ -4,7 +4,7 @@ import React, {
   useEffect, useState, useContext, createContext,
 } from 'react';
 import {
-  collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
+  collection, addDoc, getDocs, orderBy, doc, deleteDoc, getDoc, setDoc,
 } from 'firebase/firestore';
 import { db } from '../firebase/firebase-init';
 import '../styles/List.css';
@@ -32,25 +32,22 @@ function NotesList() {
   }, []);
 
   return (
-    <div>
+    <div id="notesList">
       {
-        list.map((ul) => {
-          console.log(ul);
-          return (
-            <div id="noteContainer" key={ul.id}>
-              <strong>
-                <h3 id="listTitle">
-                  {ul.title}
-                </h3>
-              </strong>
-              <h3 id="listDescr">
-                {ul.descr}
+        list.map((ul) => (
+          <div id="noteContainer" key={ul.id}>
+            <strong>
+              <h3 id="listTitle">
+                {ul.title}
               </h3>
-              <button type="button" id="btnEdit"> Edit </button>
-              <button type="button" id="btnDelete"> Delete </button>
-            </div>
-          );
-        })
+            </strong>
+            <h3 id="listDescr">
+              {ul.descr}
+            </h3>
+            {/* <button type="button" id="btnEdit"> Edit </button>
+              <button type="button" id="btnDelete"> Delete </button> */}
+          </div>
+        ))
 
     }
     </div>
