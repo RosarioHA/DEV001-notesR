@@ -1,13 +1,13 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
-import {
+import React, {
   useEffect, useState, useContext, createContext,
 } from 'react';
 import {
   collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
 } from 'firebase/firestore';
 import { db } from '../firebase/firebase-init';
+import '../styles/List.css';
 
 function NotesList() {
   // state variables
@@ -20,7 +20,8 @@ function NotesList() {
         const querySnapshot = await getDocs(collection(db, 'nCollection'));
         const docs = [];
         querySnapshot.forEach((docu) => {
-          docs.push({ ...doc.data, id: docu.id });
+          console.log(docu.data);
+          docs.push({ ...docu.data(), id: docu.id });
         });
         setList(docs);
       } catch (error) {
@@ -28,31 +29,32 @@ function NotesList() {
       }
     };
     getUL();
-  }, [list]);
+  }, []);
 
   return (
     <div>
       {
-        list.map((ul) => (
-          <div key={ul.id}>
-            <h3>
-              {' '}
-              title:
-              {' '}
-              {ul.title}
-            </h3>
-            <h3>
-              {' '}
-              descr:
-              {' '}
-              {ul.descr}
-            </h3>
-            <button type="button" id="btnEdit"> Edit </button>
-            <button type="button" id="btnDelete"> Delete </button>
-          </div>
-        ))
+        list.map((ul) => {
+          console.log(ul);
+          return (
+            <div id="noteContainer" key={ul.id}>
+              <strong>
+                <h3 id="listTitle">
+                  {ul.title}
+                </h3>
+              </strong>
+              <h3 id="listDescr">
+                {ul.descr}
+              </h3>
+              <button type="button" id="btnEdit"> Edit </button>
+              <button type="button" id="btnDelete"> Delete </button>
+            </div>
+          );
+        })
+
     }
     </div>
+
   );
 }
 

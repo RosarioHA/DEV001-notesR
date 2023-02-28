@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap');
+
+#noteContainer{
+    background-color: #FCC4BC;
+    border-radius: 20px;
+    padding: 1em;
+    margin-top: 1em;
+    max-width: 20em;
+}
+#listTitle{
+    color: #053752;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size:1em;
+}
+#listDescr{
+    color: #053752;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size:0.8em;
+}
+
+/* TABLET STYLE */
+@media only screen and (min-width: 555px) {
+    #noteContainer{
+        width: 20em;
+    }
+}

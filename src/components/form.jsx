@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 import {
   collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
 } from 'firebase/firestore';
@@ -33,23 +33,6 @@ function NotesForm() {
     }
     setNote({ ...initValue });
   };
-
-  //   // variables that render the notes list
-  //   useEffect(() => {
-  //     const getUL = async () => {
-  //       try {
-  //         const querySnapshot = await getDocs(collection(db, 'nCollection'));
-  //         const docs = [];
-  //         querySnapshot.forEach((docu) => {
-  //           docs.push({ ...doc.data(), id: docu.id });
-  //         });
-  //         setList(docs);
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-  //     getUL();
-  //   }, [list]);
 
   return (
     <form id="newNotesSctn" onSubmit={saveNotes}>

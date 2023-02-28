@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/notes.jsx</title>
+    <title>Code coverage report for src/components/notesList.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> notes.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> notesList.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
@@ -118,7 +118,12 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,30 +132,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,60 +184,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-console */
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth, logOut } from '../firebase/firebase-init';
-import NotesForm from './form';
-import NotesList from './notesList';
-import '../styles/Notes.css';
+/* eslint-disable no-unused-vars */
+import React, {
+  useEffect, useState, useContext, createContext,
+} from 'react';
+import {
+  collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
+} from 'firebase/firestore';
+import { db } from '../firebase/firebase-init';
 &nbsp;
-function <span class="fstat-no" title="function not covered" >Notes(</span>) {
-  const [name, setName] = <span class="cstat-no" title="statement not covered" >useState('');</span>
+function <span class="fstat-no" title="function not covered" >NotesList(</span>) {
+  // state variables
+  const [list, setList] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  onAuthStateChanged(auth, <span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; {</span>
-    const { displayName } = <span class="cstat-no" title="statement not covered" >user;</span>
-<span class="cstat-no" title="statement not covered" >    if (displayName !== null) {</span>
-<span class="cstat-no" title="statement not covered" >      setName(displayName);</span>
-    }
-  });
-&nbsp;
-  const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
-  const signOut = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    logOut(auth).then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      console.log('session successfully closed');</span>
-<span class="cstat-no" title="statement not covered" >      navigate('/');</span>
-    }).catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >      console.log(error);</span>
-    });
-  };
+  // variables that render the notes list
+<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+    const getUL = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+        const querySnapshot = <span class="cstat-no" title="statement not covered" >await getDocs(collection(db, 'nCollection'));</span>
+        const docs = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        querySnapshot.forEach(<span class="fstat-no" title="function not covered" >(d</span>ocu) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          console.log(docu.data);</span>
+<span class="cstat-no" title="statement not covered" >          docs.push({ ...docu.data(), id: docu.id });</span>
+        });
+<span class="cstat-no" title="statement not covered" >        setList(docs);</span>
+      } catch (error) {
+<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
+      }
+    };
+<span class="cstat-no" title="statement not covered" >    getUL();</span>
+  }, []);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;div&gt;
+      {
+        list.map(<span class="fstat-no" title="function not covered" >(u</span>l) =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(ul);</span>
+<span class="cstat-no" title="statement not covered" >          return (</span>
+            &lt;div key={ul.id}&gt;
+              &lt;h3&gt;
+                {' '}
+                {ul.title}
+                {' '}
+              &lt;/h3&gt;
+              &lt;h3&gt;
+                {ul.descr}
+              &lt;/h3&gt;
+              &lt;button type="button" id="btnEdit"&gt; Edit &lt;/button&gt;
+              &lt;button type="button" id="btnDelete"&gt; Delete &lt;/button&gt;
+            &lt;/div&gt;
+          );
+        })
 &nbsp;
-    &lt;div id="notesDiv"&gt;
-      &lt;section id="heatherSection"&gt;
-        &lt;h2 id="welcome"&gt;
-          {' '}
-          Welcome to your notes
-          {' '}
-          &lt;strong&gt;{name}&lt;/strong&gt;
-        &lt;/h2&gt;
-        &lt;button id="logoutBtn" type="button" onClick={signOut}&gt; Sign out &lt;/button&gt;
-      &lt;/section&gt;
-&nbsp;
-      &lt;section&gt;
-        &lt;NotesForm /&gt;
-      &lt;/section&gt;
-      &lt;section&gt;
-        &lt;NotesList /&gt;
-      &lt;/section&gt;
-&nbsp;
+    }
     &lt;/div&gt;
 &nbsp;
   );
 }
 &nbsp;
-export default Notes;
+export default NotesList;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
