@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BsFillPlusCircleFill } from 'react-icons/bs'
+import { FiPlusCircle } from 'react-icons/fi';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, logOut } from '../firebase/firebase-init';
 // import NotesForm from './form';
@@ -52,7 +51,7 @@ function Notes() {
         <button id="logoutBtn" type="button" onClick={signOut}> Sign out </button>
       </section>
       <section>
-        <BsFillPlusCircleFill type="button" id="modalBtn" onClick={handleShowModal} />
+        <FiPlusCircle type="button" id="modalBtn" onClick={handleShowModal} />
       </section>
       <Modal shoy={showModal} onClose={handleCloseModal} />
       {/* <section>
