@@ -1,10 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, logOut } from '../firebase/firebase-init';
-import NotesForm from './form';
+// import NotesForm from './form';
 import NotesList from './notesList';
+import Modal from './modal';
 import '../styles/Notes.css';
 
 function Notes() {
@@ -27,6 +30,15 @@ function Notes() {
     });
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
 
     <div id="notesDiv">
@@ -39,10 +51,13 @@ function Notes() {
         </h2>
         <button id="logoutBtn" type="button" onClick={signOut}> Sign out </button>
       </section>
-
       <section>
-        <NotesForm />
+        <BsFillPlusCircleFill type="button" id="modalBtn" onClick={handleShowModal} />
       </section>
+      <Modal shoy={showModal} onClose={handleCloseModal} />
+      {/* <section>
+        <NotesForm />
+      </section> */}
       <section>
         <NotesList />
       </section>
