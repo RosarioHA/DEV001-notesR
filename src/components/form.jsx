@@ -36,8 +36,8 @@ function NotesForm() {
 
   return (
     <form id="newNotesSctn" onSubmit={saveNotes}>
-      <input id="titleInput" name="title" placeholder="Give your note a title" onChange={catchInput} value={note.title} />
-      <input id="noteInput" name="descr" placeholder="Write your note here" onChange={catchInput} value={note.descr} />
+      <textarea id="titleInput" name="title" placeholder="Give your note a title" onChange={catchInput} value={note.title} />
+      <textarea id="noteInput" name="descr" placeholder="Write your note here" onChange={catchInput} value={note.descr} />
       <button id="saveBtn" type="submit"> Save </button>
     </form>
   );
