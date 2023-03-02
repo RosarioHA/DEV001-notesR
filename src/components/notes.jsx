@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiPlusCircle } from 'react-icons/fi';
+// import { FiPlusCircle } from 'react-icons/fi';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, logOut } from '../firebase/firebase-init';
-// import NotesForm from './form';
+import NotesForm from './form';
 import NotesList from './notesList';
-import Modal from './modal';
+// import Modal from './modal';
 import '../styles/Notes.css';
 
 function Notes() {
@@ -29,14 +29,14 @@ function Notes() {
     });
   };
 
-  const [showModal, setShowModal] = useState(false);
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
+  // const [showModal, setShowModal] = useState(false);
+  // const handleShowModal = () => {
+  //   setShowModal(true);
+  // };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+  // const handleCloseModal = () => {
+  //   setShowModal(false);
+  // };
 
   return (
 
@@ -50,13 +50,19 @@ function Notes() {
         </h2>
         <button id="logoutBtn" type="button" onClick={signOut}> Sign out </button>
       </section>
-      <section>
-        <FiPlusCircle type="button" id="modalBtn" onClick={handleShowModal} />
-      </section>
-      <Modal shoy={showModal} onClose={handleCloseModal} />
       {/* <section>
-        <NotesForm />
+        <FiPlusCircle id="modalBtn" onClick={handleShowModal} />
+
+        {showModal && (
+        <Modal
+          show={showModal}
+          onClose={handleCloseModal}
+        />
+        )}
       </section> */}
+      <section>
+        <NotesForm />
+      </section>
       <section>
         <NotesList />
       </section>

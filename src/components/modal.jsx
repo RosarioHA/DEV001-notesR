@@ -1,6 +1,5 @@
 import React from 'react';
-// import { BsFillPlusCircleFill } from 'react-icons/bs';
-import { FiPlusCircle } from 'react-icons/fi';
+import { BsFillPlusCircleFill } from 'react-icons/bs';
 import NotesForm from './form';
 import '../styles/Modal.css';
 
@@ -14,7 +13,7 @@ function Modal({ show, onClose, children }) {
     <section className="modal-container">
       <div className="show-modal-container">
         <div className="close-icon">
-          <FiPlusCircle type="button" className="close" onClick={onClose} />
+          <BsFillPlusCircleFill className="close" onClick={onClose} />
         </div>
         <NotesForm />
         {children}

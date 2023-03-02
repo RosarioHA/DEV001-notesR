@@ -1,9 +1,11 @@
 #notesDiv{
     display: flex;
     flex-direction:column;
-    background-color: #FEE4B7;
-    height: 100%;
+    /* background-color: #FEE4B7; */
+    height: 1000px;
     padding: 2em;
+    background-color: var(--rosa);
+    background-size: cover;
 }
 
 #heatherSection{
@@ -34,6 +36,10 @@
     font-size: 1em;
     text-decoration: none;
     min-width: 50px;
+}
+#modalBtn{
+    cursor: pointer;
+    width: 5em;
 }
 
 #notesUL{
