@@ -12,11 +12,11 @@ body{
     height: 100%;
     margin: 0em; 
     padding: 0em;
-    
+    background-color: var(--cielo);
 }
 
 #notes{
-    background-color: var(--cielo);
+    
     background-size: cover;
     width: 100%;
     height: 100%;
