@@ -19,7 +19,11 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size:0.8em;
+    max-width: 15em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
+
 
 /* TABLET STYLE */
 @media only screen and (min-width: 555px) {
@@ -32,5 +36,5 @@
         width: 12em;
         margin: 0.5em;
     }
-
+    
 }

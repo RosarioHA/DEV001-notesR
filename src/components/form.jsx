@@ -4,21 +4,15 @@ import React, { useState, useEffect } from 'react';
 import {
   collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc,
 } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../firebase/firebase-init';
 import '../styles/Form.css';
 
 function NotesForm() {
-  // const time = new Date();
-  // const currentDate = time.toLocaleString();
   const [user, setUser] = useState(null);
-  // const userUid = User.uid;
-  // const usid = localStorage.getItem('uid');
 
   const initValue = {
     title: '',
     descr: '',
-    // time: '',
   };
 
   // state variables
@@ -30,35 +24,15 @@ function NotesForm() {
     setNote({ ...note, [name]: value });
   };
 
-  // const saveNotes = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await addDoc(collection(db, `nCollection${usid}`), {
-  //       ...note,
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   setNote({ ...initValue });
-  // };
   const [list, setList] = useState([]);
   // let usid;
 
-  // onAuthStateChanged(auth, (user) => {
-  //   const { uid } = user;
-  //   if (uid !== null) {
-  //     // setUsid(uid);
-  //     usid = uid;
-  //   }
-  // });
-
   const getUL = async (usid) => {
     try {
-      const querySnapshot = await getDocs(collection(db, `nCollection${usid}`));
+      const querySnapshot = await getDocs(collection(db, 'nCollection'));
       console.log(usid);
       const docs = [];
       querySnapshot.forEach((docu) => {
-        // console.log(docu.data);
         docs.push({ ...docu.data(), id: docu.id });
       });
       setList(docs);
@@ -88,8 +62,10 @@ function NotesForm() {
     try {
       if (user) {
         const usid = user.uid;
-        await addDoc(collection(db, `nCollection${usid}`), {
+        await addDoc(collection(db, 'nCollection'), {
           ...note,
+          date: new Date().toISOString(), // Adds date using ISOString format
+          user: usid, // Adds the courrent user ID
         });
         console.log(usid);
         setNote({ ...initValue });

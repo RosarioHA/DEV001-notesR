@@ -14,23 +14,28 @@ import '../styles/List.css';
 function NotesList() {
   // state variables
   const [list, setList] = useState([]);
-  // const [usid, setUsid] = useState('');
-  let usid;
+  // let usid;
 
-  onAuthStateChanged(auth, (user) => {
-    const { uid } = user;
-    if (uid !== null) {
-      // setUsid(uid);
-      usid = uid;
-    }
-  });
-  const getUL = async () => {
+  // el problema con el renderizado es que no detecta al usuario antes de tomar
+  // getList en el useEffect. puede hacerse con un setuser denuevo. Ivy
+  // recomienda hacer un contexto con el usuario para llamarlo de manera gloval.
+  // tambien  recomienda filtrar los comentarios en lugar de hacer una coleccion para c/u
+
+  // onAuthStateChanged(auth, (user) => {
+  //   const { uid } = user;
+  //   if (uid !== null) {
+  //     // setUsid(uid);
+  //     usid = uid;
+  //   }
+  // });
+
+  const getList = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, `nCollection${usid}`));
-      console.log(usid);
+      const collectionName = 'nCollection';
+      const querySnapshot = await getDocs(collection(db, collectionName), orderBy('date', 'asc'));
+      console.log(collectionName);
       const docs = [];
       querySnapshot.forEach((docu) => {
-        // console.log(docu.data);
         docs.push({ ...docu.data(), id: docu.id });
       });
       setList(docs);
@@ -38,9 +43,10 @@ function NotesList() {
       console.log(error);
     }
   };
+
   // variables that render the notes list
   useEffect(() => {
-    getUL();
+    getList();
   }, []);
 
   return (
@@ -53,9 +59,11 @@ function NotesList() {
                 {ul.title}
               </h3>
             </strong>
-            <h3 id="listDescr">
-              {ul.descr}
-            </h3>
+            <pre>
+              <h3 id="listDescr">
+                {ul.descr}
+              </h3>
+            </pre>
             {/* <button type="button" id="btnEdit"> Edit </button>
               <button type="button" id="btnDelete"> Delete </button> */}
           </div>
