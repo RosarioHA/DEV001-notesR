@@ -32,7 +32,10 @@ function NotesList() {
   const getList = async () => {
     try {
       const collectionName = 'nCollection';
-      const querySnapshot = await getDocs(collection(db, collectionName), orderBy('date', 'asc'));
+      const querySnapshot = await getDocs(
+        collection(db, collectionName),
+        orderBy('date', 'desc'),
+      );
       console.log(collectionName);
       const docs = [];
       querySnapshot.forEach((docu) => {
