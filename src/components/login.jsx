@@ -1,14 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginGoogle } from '../firebase/Auth';
+import { loginGoogle } from '../firebase/firebase-init';
 import notesLogo from '../assets/notesLogo.png';
-import './Login.css';
+import '../styles/Login.css';
 
 function Login() {
   const navigate = useNavigate();
   const googleSignIn = () => {
     loginGoogle().then(() => {
       navigate('/notes');
+      // eslint-disable-next-line no-unused-vars
+      // const [user, setUser] = useState(null);
+      // localStorage.setItem('uid', user.uid);
     })
       // eslint-disable-next-line no-console
       .catch(console.error);

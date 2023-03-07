@@ -1,14 +1,24 @@
 #notesDiv{
+    /* border: 3px solid black; */
     display: flex;
-    justify-content: space-between;
-    background-color: #FEE4B7;
-    height: 812px;
+    flex-direction:column;
+    background-color: var(--rosa);
+    /* background-color: #FEE4B7; */
+    /* min-height: 100vh; */
     padding: 2em;
+    background-size: cover;
+}
+
+#heatherSection{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 1em;
 }
 #logoutBtn{
     background-color: #053752; 
     color:#FDF8DD;
-    width: 150px;
+    width: 155px;
     height: 3em;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -23,9 +33,18 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-    margin-bottom: 1em;
+    margin-right: 1em;
     font-size: 1em;
     text-decoration: none;
+    min-width: 50px;
+}
+#modalBtn{
+    cursor: pointer;
+    width: 5em;
+}
+
+#notesUL{
+    border: 3px solid salmon;
 }
 
 /* TABLET STYLE */
