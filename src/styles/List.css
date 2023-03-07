@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap');
-
+#notesList{
+    height: 100%;
+}
 #noteContainer{
     background-color: #FCC4BC;
     border-radius: 2px;
