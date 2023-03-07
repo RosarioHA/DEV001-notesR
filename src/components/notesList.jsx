@@ -1,10 +1,8 @@
 /* eslint-disable no-shadow */
-/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
-import React, {
-  useEffect, useState,
-} from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useEffect, useState, useRef } from 'react';
 import {
   collection,
   addDoc,
@@ -18,6 +16,7 @@ import {
   getDoc,
   setDoc,
 } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../firebase/firebase-init';
 import '../styles/List.css';
 
@@ -25,6 +24,8 @@ function NotesList() {
   // state variables
   const [list, setList] = useState([]);
   const [userId, setUserId] = useState('');
+  const [selectedNoteId, setSelectedNoteId] = useState(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -43,18 +44,51 @@ function NotesList() {
     const listenForUpdates = onSnapshot(notesQuery, (snapshot) => {
       const docs = [];
       snapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
+        docs.push({ ...doc.data(), id: doc.id, showButtons: false });
       });
       setList(docs);
     });
     return listenForUpdates;
   }, [userId]);
 
+  function handleNoteClick(noteId) {
+    setSelectedNoteId(noteId);
+    setList(list.map((item) => {
+      if (item.id === noteId) {
+        return {
+          ...item,
+          showButtons: !item.showButtons,
+        };
+      }
+      return {
+        ...item,
+        showButtons: false,
+      };
+    }));
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setSelectedNoteId(null);
+        setList(list.map((item) => ({ ...item, showButtons: false })));
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [containerRef, list]);
+
   return (
-    <div id="notesList">
+    <div id="notesList" ref={containerRef}>
       {
         list.map((note) => (
-          <div id="noteContainer" key={note.id}>
+          <div
+            id="noteContainer"
+            key={note.id}
+            onClick={() => handleNoteClick(note.id)}
+          >
             <strong>
               <h3 id="listTitle">
                 {note.title}
@@ -65,14 +99,16 @@ function NotesList() {
                 {note.descr}
               </h3>
             </pre>
-            <button type="button" id="btnEdit"> Edit </button>
-            <button type="button" id="btnDelete"> Delete </button>
+            {selectedNoteId === note.id && note.showButtons && (
+              <>
+                <button type="button" id="btnEdit" tabIndex="0"> Edit </button>
+                <button type="button" id="btnDelete" tabIndex="0"> Delete </button>
+              </>
+            )}
           </div>
         ))
-
-    }
+      }
     </div>
-
   );
 }
 
