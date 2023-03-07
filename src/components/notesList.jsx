@@ -24,64 +24,45 @@ import '../styles/List.css';
 function NotesList() {
   // state variables
   const [list, setList] = useState([]);
-  const [usid, setUsid] = useState('');
+  const [userId, setUserId] = useState('');
 
-  onAuthStateChanged(auth, (user) => {
-    const { uid } = user;
-    if (uid !== null) {
-      // setUsid(uid);
-      setUsid(uid);
-    }
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user.uid);
+      }
+    });
+  }, []);
 
-  // const getList = async () => {
-  //   try {
-  //     // const collectionName = 'nCollection';
-  //     const nCollectionQuery = query(collection(db, 'nCollection'), orderBy('date'));
-  //     const querySnapshot = await getDocs(nCollectionQuery);
-  //     const docs = [];
-  //     querySnapshot.forEach((docu) => {
-  //       docs.push({ ...docu.data(), id: docu.id });
-  //     });
-  //     setList(docs);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  const listenForUpdates = () => {
-    const collectionName = 'nCollection';
-    const nCollectionQuery = query(
-      collection(db, collectionName),
+  useEffect(() => {
+    const notesQuery = query(
+      collection(db, 'nCollection'),
+      where('user', '==', userId),
       orderBy('date'),
     );
-    onSnapshot(nCollectionQuery, (snapshot) => {
+    const listenForUpdates = onSnapshot(notesQuery, (snapshot) => {
       const docs = [];
       snapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
       });
       setList(docs);
     });
-  };
-
-  // variables that render the notes list
-  useEffect(() => {
-    listenForUpdates();
-  }, []);
+    return listenForUpdates;
+  }, [userId]);
 
   return (
     <div id="notesList">
       {
-        list.map((ul) => (
-          <div id="noteContainer" key={ul.id}>
+        list.map((note) => (
+          <div id="noteContainer" key={note.id}>
             <strong>
               <h3 id="listTitle">
-                {ul.title}
+                {note.title}
               </h3>
             </strong>
             <pre>
               <h3 id="listDescr">
-                {ul.descr}
+                {note.descr}
               </h3>
             </pre>
             {/* <button type="button" id="btnEdit"> Edit </button>
