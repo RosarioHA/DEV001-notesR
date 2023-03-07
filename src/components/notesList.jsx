@@ -65,8 +65,8 @@ function NotesList() {
                 {note.descr}
               </h3>
             </pre>
-            {/* <button type="button" id="btnEdit"> Edit </button>
-              <button type="button" id="btnDelete"> Delete </button> */}
+            <button type="button" id="btnEdit"> Edit </button>
+            <button type="button" id="btnDelete"> Delete </button>
           </div>
         ))
 
