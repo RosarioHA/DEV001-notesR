@@ -27,6 +27,8 @@ function NotesList() {
   const [list, setList] = useState([]);
   const [userId, setUserId] = useState('');
   const [selectedNoteId, setSelectedNoteId] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [noteToDeleteId, setNoteToDeleteId] = useState(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -83,6 +85,16 @@ function NotesList() {
   }, [containerRef, list]);
 
   // eliminate note
+
+  // PRUEBA MODAL
+  // async function deleteNote(noteId) {
+  //   try {
+  //     await deleteDoc(doc(db, 'nCollection', noteId));
+  //   } catch (error) {
+  //     console.error('Error removing note', error);
+  //   }
+  //   setIsDeleteModalOpen(false);
+  // }
   async function deleteNote(noteId) {
     const confirmDelete = window.confirm('Are you sure you want to delete this note?');
     if (confirmDelete) {

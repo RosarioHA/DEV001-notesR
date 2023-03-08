@@ -4,7 +4,7 @@ import NotesForm from './form';
 import '../styles/Modal.css';
 
 // eslint-disable-next-line react/prop-types
-function Modal({ show, onClose, children }) {
+function FormModal({ show, onClose, children }) {
   if (!show) {
     return null;
   }
@@ -22,4 +22,4 @@ function Modal({ show, onClose, children }) {
   );
 }
 
-export default Modal;
+export default FormModal;
