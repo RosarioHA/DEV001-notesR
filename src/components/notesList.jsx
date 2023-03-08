@@ -1,7 +1,9 @@
-/* eslint-disable no-shadow */
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, { useEffect, useState, useRef } from 'react';
 import {
   collection,
@@ -43,8 +45,8 @@ function NotesList() {
     );
     const listenForUpdates = onSnapshot(notesQuery, (snapshot) => {
       const docs = [];
-      snapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id, showButtons: false });
+      snapshot.forEach((docu) => {
+        docs.push({ ...docu.data(), id: docu.id, showButtons: false });
       });
       setList(docs);
     });
@@ -80,6 +82,20 @@ function NotesList() {
     };
   }, [containerRef, list]);
 
+  // eliminate note
+  async function deleteNote(noteId) {
+    const confirmDelete = window.confirm('Are you sure you want to delete this note?');
+    if (confirmDelete) {
+      try {
+        await deleteDoc(doc(db, 'nCollection', noteId));
+      } catch (error) {
+        console.error('Error removing note', error);
+      }
+    }
+  }
+
+  // edit button
+
   return (
     <div id="notesList" ref={containerRef}>
       {
@@ -102,7 +118,7 @@ function NotesList() {
             {selectedNoteId === note.id && note.showButtons && (
               <>
                 <button type="button" id="btnEdit" tabIndex="0"> Edit </button>
-                <button type="button" id="btnDelete" tabIndex="0"> Delete </button>
+                <button type="button" id="btnDelete" tabIndex="0" onClick={() => deleteNote(note.id)}> Delete </button>
               </>
             )}
           </div>
