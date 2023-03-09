@@ -5,6 +5,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, { useEffect, useState, useRef } from 'react';
+import Modal from 'react-modal';
 import {
   collection,
   addDoc,
