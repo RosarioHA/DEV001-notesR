@@ -86,15 +86,6 @@ function NotesList() {
 
   // eliminate note
 
-  // PRUEBA MODAL
-  // async function deleteNote(noteId) {
-  //   try {
-  //     await deleteDoc(doc(db, 'nCollection', noteId));
-  //   } catch (error) {
-  //     console.error('Error removing note', error);
-  //   }
-  //   setIsDeleteModalOpen(false);
-  // }
   async function deleteNote(noteId) {
     const confirmDelete = window.confirm('Are you sure you want to delete this note?');
     if (confirmDelete) {
@@ -105,8 +96,31 @@ function NotesList() {
       }
     }
   }
+  // PRUEBA MODAL
+  // async function deleteNote(noteId) {
+  //   try {
+  //     await deleteDoc(doc(db, 'nCollection', noteId));
+  //   } catch (error) {
+  //     console.error('Error removing note', error);
+  //   }
+  //   setIsDeleteModalOpen(false);
+  // }
 
-  // edit button
+  // edit note
+  async function editNote(noteId) {
+    // const newTitle = prompt('Edit your title:'.list.find((note) => note.id === noteId).title);
+    const newTitle = prompt(`Edit your title: ${list.find((note) => note.id === noteId).title}`);
+    const newDesc = prompt(`Edit your description: ${list.find((note) => note.id === noteId).descr}`);
+    try {
+      await setDoc(doc(db, 'nCollection', noteId), {
+        title: newTitle,
+        descr: newDesc,
+      }, { merge: true });
+    } catch (error) {
+      console.error('Error updating note', error);
+    }
+  }
+  console.log(list);
 
   return (
     <div id="notesList" ref={containerRef}>
@@ -129,7 +143,7 @@ function NotesList() {
             </pre>
             {selectedNoteId === note.id && note.showButtons && (
               <>
-                <button type="button" id="btnEdit" tabIndex="0"> Edit </button>
+                <button type="button" id="btnEdit" tabIndex="0" onClick={() => editNote(note.id)}> Edit </button>
                 <button type="button" id="btnDelete" tabIndex="0" onClick={() => deleteNote(note.id)}> Delete </button>
               </>
             )}
