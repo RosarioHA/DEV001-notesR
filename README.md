@@ -1,7 +1,7 @@
 # Notes
 
 ## Introduction
-For this project, the challenge was to build a web application for taking notes that allows us to create, edit, delete, and consult them at any time. I used HTML, CSS, Javascript, and React to create a Single Page App that is also responsive, using a Mobile First approach.
+For this project, the challenge was to build a web application for taking notes that allows us to create, edit, delete, and consult them at any time. I used HTML, CSS, Javascript, Firebase and React to create a Single Page App that is also responsive, using a Mobile First approach.
 
 ## Users
 Our application's users seek a simple and user-friendly interface to store and manage their daily notes. For this purpose, I chose a mainly pastel color palette, contrasted with a dark color to provide contrast and visibility to key details. I also prioritized a clean view and an intuitive layout that facilitates its use for as many users as possible.
@@ -14,7 +14,7 @@ Our application's users seek a simple and user-friendly interface to store and m
 
 
 ## 1st User Story
-For the first user story, users need to access the Notes section by authenticating their account. In this first version of the project, I facilitated the authentication option with a Google account, hoping to expand to more options in the future.
+For the first user story, users need to access the Notes section by authenticating their account. In this first version of the project, I facilitated the authentication option with a Google account, using Firebase's "sign in with popup" function and hoping to expand to more options in the future.
 
 **Screenshot of the page viewed on local host, responsive views of tablet and mobile phone.**
 
