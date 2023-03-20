@@ -20,6 +20,8 @@ For the first user story, users need to access the Notes section by authenticati
 
 ![Captura de pantalla 2023-03-20 a la(s) 4 37 06 p  m](https://user-images.githubusercontent.com/114428069/226447728-81323e33-da9c-4144-bd4f-7d9efed096f8.png)
 
+_When clicking on the "I don't have an account" text under the button, the user is redirected to the Google authentication page to create a Google account_
+
 ## 2nd User Story
 In this second user story, we need to be able to create notes, save them, and display them on the interface. I used the Firestore database, which receives both the data from the form to create notes, as well as the time, date, and user ID. The notes associated with the logged-in user will be rendered on the interface, with synchronization between the interface and the state.
 
