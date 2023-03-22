@@ -3,20 +3,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-
 import React, { useEffect, useState, useRef } from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import {
   collection,
-  addDoc,
-  getDocs,
   orderBy,
   query,
   onSnapshot,
   where,
   doc,
   deleteDoc,
-  getDoc,
   setDoc,
 } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -28,8 +24,11 @@ function NotesList() {
   const [list, setList] = useState([]);
   const [userId, setUserId] = useState('');
   const [selectedNoteId, setSelectedNoteId] = useState(null);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const [noteToDeleteId, setNoteToDeleteId] = useState(null);
+  // const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); son del modal delete
+  // const [noteToDeleteId, setNoteToDeleteId] = useState(null); son del modal delete
+  // const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  // const [newTitle, setNewTitle] = useState('');
+  // const [newDesc, setNewDesc] = useState('');
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -109,7 +108,6 @@ function NotesList() {
 
   // edit note
   async function editNote(noteId) {
-    // const newTitle = prompt('Edit your title:'.list.find((note) => note.id === noteId).title);
     const newTitle = prompt(`Edit your title: ${list.find((note) => note.id === noteId).title}`);
     const newDesc = prompt(`Edit your description: ${list.find((note) => note.id === noteId).descr}`);
     try {
@@ -151,6 +149,30 @@ function NotesList() {
           </div>
         ))
       }
+      {/* <Modal
+        isOpen={isEditModalOpen}
+        onRequestClose={() => setIsEditModalOpen(false)}
+        contentLabel="Edit Note"
+      >
+        <form onSubmit={handleEditSubmit}>
+          <h2>Edit Note</h2>
+          <label htmlFor="editTitle">Title:</label>
+          <input
+            id="editTitle"
+            type="text"
+            value={newTitle}
+            onChange={(e) => setNewTitle(e.target.value)}
+          />
+          <label htmlFor="editDesc">Description:</label>
+          <textarea
+            id="editDesc"
+            value={newDesc}
+            onChange={(e) => setNewDesc(e.target.value)}
+          />
+          <button type="submit">Save</button>
+          <button type="button" onClick={() => setIsEditModalOpen(false)}>Cancel</button>
+        </form>
+      </Modal> */}
     </div>
   );
 }
