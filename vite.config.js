@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), eslint()],
   build: {
     chunkSizeWarningLimit: 600,
-  }
+  },
   // define: {
   //   'process.env': {},
   //   'import.meta.env': {},
@@ -18,4 +18,3 @@ export default defineConfig({
   //   },
   // },
 });
-
