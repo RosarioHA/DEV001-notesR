@@ -25,6 +25,30 @@
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+#btnEdit{
+    color: #053752; 
+    background-color:#FDF8DD;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    border: 1px solid transparent;
+    margin-right: 0.2em;
+
+}
+#btnDelete{
+    background-color: #053752; 
+    color:#FDF8DD;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.3em 1em;
+    border: 1px solid transparent;
+}
 
 
 /* TABLET STYLE */

@@ -6,7 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth, logOut } from '../firebase/firebase-init';
 import NotesForm from './form';
 import NotesList from './notesList';
-// import Modal from './modal';
+// import FormModal from './modal';
 import '../styles/Notes.css';
 
 function Notes() {
