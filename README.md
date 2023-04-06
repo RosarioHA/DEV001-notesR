@@ -39,5 +39,7 @@ For the third user story, I aimed to also allow users to edit or delete the note
 
 ![Captura de pantalla 2023-03-20 a la(s) 5 28 09 p  m](https://user-images.githubusercontent.com/114428069/226458408-fc9be935-cdec-4c55-b641-ce24e8750a51.png)
 
-
+## Deployed Project
+If you want to see the project's deployment, you can acces it through the following link
+https://6424d0598bd61a5c86f6bed2--merry-youtiao-af12d5.netlify.app/
 
